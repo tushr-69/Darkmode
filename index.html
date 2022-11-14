@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Css Reset  */
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* CSS Variables  */
+      :root {
+        --navbar-height: 59px;
+        --primary-color : white;
+        --secondary-color : black;
+    }
+    .Darkmode {
+            --primary-color : black;
+        --secondary-color : white;
+        }
+
+      body {
+        background-color: var(--primary-color);
+        color: var(--secondary-color)
+      }
+      /* Navigation Bar  */
+      #navbar {
+        position: sticky;
+        top: 0px;
+        display: flex;
+        align-items: center;
+      }
+      #navbar::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.4;
+      }
+      /*  Navigation Bar:Logo and image  */
+      #logo {
+        margin: 10px 34px;
+        cursor: pointer;
+      }
+      #logo img {
+        height: 59px;
+        margin: 3px 6px;
+      }
+      /* Navigation Bar: List Styling  */
+      #navbar ul {
+        display: flex;
+      }
+      #navbar ul li {
+        /* color: white ; */
+        list-style: none;
+        font-size: 1.3rem;
+      }
+      #navbar ul li a {
+        color: white;
+        display: block;
+        padding: 5px 16px;
+        margin: 10px;
+        border-radius: 20px;
+        text-decoration: none;
+        background-color: rgb(17, 143, 17);
+      }
+
+      #navbar ul li a:hover {
+        color: black;
+        background-color: var(--primary-color);
+      }
+      #icon{
+        width: 30px;
+        cursor: pointer;
+      }
+      /* Navbar style done  */
+
+      /* Now Home Section  */
+      #home {
+        display: flex;
+        flex-direction: column;
+        padding: 3px 200px;
+        height: 550px;
+        justify-content: center;
+        align-items: center;
+      }
+      .redcolor {
+        color: red;
+      }
+      #home::before {
+        content: "";
+        /* background: url("homebg.jpeg") no-repeat center center/cover; */
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 644px;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.4;
+      }
+
+      #home h1 {
+        color:  var(--secondary-color)
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      #home p {
+        color:  var(--secondary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div id="logo">
+        <img src="logotop.jpg" alt="myonlinemeals" />
+      </div>
+      <ul>
+        <li class="item"><a href="#home">Home</a></li>
+        <li class="item"><a href="#convert">Convert</a></li>
+        <li class="item"><a href="#services">Services</a></li>
+        <li class="item"><a href="#contact-box">Conctact Us</a></li>
+      </ul>
+      <img src="moon.png" id="icon" alt="">
+    </nav>
+    <section id="home">
+      <h1 class="h-primary">Welcome to EasyConverter</h1>
+      <br />
+      <p>
+        Here is the useful SGPA to Percentage conversion calculator online for
+        you to convert SGPA to Percentage with ease. Just enter the SGPA and
+        submit to know the corresponding percentage.
+      </p>
+      <br /><br />
+      <p>
+        <span class="redcolor"><b>SGPA</b></span
+        >: SGPA (Semester Grade Point Average) is a grading system used in
+        educational institutions worldwide, which is defined as the weighted
+        mean of the grades achieved in various subjects by the students, wherein
+        each subject is allocated with a particular credit acting as a weight
+        for that subject. SGPA in various countries has slight modifications
+        depending upon the respective educational systems.
+      </p>
+      <br />
+      <br />
+
+      <p>
+        <span class="redcolor"> <b>How to Convert SGPA to Percentage?</b> </span
+        >: It can be easily converted by just subtracting the 0.75 from SGPA and
+        multiplying it the resultant with number 10.
+      </p>
+      <br />
+      <br />
+
+      <p>
+        <span class="redcolor"
+          ><b>SGPA To Percentage Conversion Calculator</b></span
+        >: Feel free to make use of this online SGPA to percentage calculator to
+        convert SGPA into a percentage in a simple way within fractions of
+        seconds.
+      </p>
+      <br /><br /><br />
+      <button class="btn" id="convert">
+        <a href="#convert">Convert Now</a>
+      </button>
+    </section>
+    <script>
+        var icon = document.getElementById("icon");
+        icon.onclick = function(){
+            document.body.classList.toggle("Darkmode");
+            if( document.body.classList.contains("Darkmode")){
+                icon.src = "sun.png";
+            }
+            else{
+                icon.src = "moon.png";
+            }
+        }
+    </script>
+  </body>
+</html>
